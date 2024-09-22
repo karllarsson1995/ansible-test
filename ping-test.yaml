@@ -1,0 +1,7 @@
+---
+- name: Test connectivity to Cisco switch
+  hosts: switches
+  gather_facts: no
+  tasks:
+    - name: Ping the switch
+      ping:
