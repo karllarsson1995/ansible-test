@@ -1,6 +1,6 @@
 ---
 - name: Test connectivity to Cisco switch
-  hosts: firewalls
+  hosts: switches
   gather_facts: no
   tasks:
     - name: Ping the switch
