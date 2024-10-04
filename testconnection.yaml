@@ -1,8 +1,8 @@
----
-- name: Test connectivity to Cisco switch
-  hosts: fortigate60F
-  become: yes
-  gather_facts: no
+- hosts: fortigate60F
+  connection: httpapi
+  collections:
+    - ansible.netcommon
   tasks:
-    - name: Ping the device
-      ping:
+    - name: Ping FortiGate
+      ansible.netcommon.net_ping:
+        dest: "{{ ansible_host }}"
