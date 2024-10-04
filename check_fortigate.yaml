@@ -4,7 +4,7 @@
     - fortinet.fortios
   tasks:
     - name: Retrieve FortiGate system information
-      fortios_system_firmware:
+      fortinet.fortios.fortios_system_info:
         vdom: "root"
       register: result
 
