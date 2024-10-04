@@ -1,4 +1,4 @@
-- hosts: fortigate60F
+- hosts: fortigates
   connection: httpapi
   collections:
     - ansible.netcommon
