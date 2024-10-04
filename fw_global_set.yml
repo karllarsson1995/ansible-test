@@ -1,4 +1,4 @@
-- hosts: fortigate60F
+- hosts: fortigates
   collections:
    - fortinet.fortios
   connection: httpapi
