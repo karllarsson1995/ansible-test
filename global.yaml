@@ -1,0 +1,31 @@
+- hosts: fortigates
+
+ connection: httpapi
+
+ collections:
+
+ - fortinet.fortios
+
+ vars:
+
+  vdom: "root"
+
+  ansible_httpapi_use_ssl: true
+
+  ansible_httpapi_validate_certs: false
+
+  ansible_httpapi_port: 8443
+
+tasks:
+
+  - name: Configure global attribute
+
+    fortios_system_global:
+
+       vdom: "{{ vdom }}"
+
+       access_token: "{{ fortios_access_token }}"
+
+       system_global:
+
+           hostname: 'FortiGateHostName'
