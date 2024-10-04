@@ -1,0 +1,21 @@
+- hosts: fortigate60F
+  connection: httpapi
+  collections:
+    - fortinet.fortios
+  vars:
+    ansible_httpapi_use_ssl: true
+    ansible_httpapi_validate_certs: false
+    ansible_httpapi_port: 8443  # Specify the admin port here
+  tasks:
+    - name: Upgrade firmware on FortiGate
+      fortios_system_firmware_upgrade:
+        vdom: "root"
+        system_firmware:
+          source: "upload"
+          filename: "/home/karl951/fortigate_ansible/FGT_60F-v7.2.10.M-build1706-FORTINET.out" #change image here
+          format_partition: false
+      register: upgrade_result
+
+    - name: Check upgrade result
+      debug:
+        var: upgrade_result.meta.results.status
