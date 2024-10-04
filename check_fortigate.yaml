@@ -1,0 +1,13 @@
+- hosts: fortigates
+  connection: httpapi
+  collections:
+    - fortinet.fortios
+  tasks:
+    - name: Retrieve FortiGate system information
+      fortios_system_firmware:
+        vdom: "root"
+      register: result
+
+    - name: Display system information
+      debug:
+        var: result
